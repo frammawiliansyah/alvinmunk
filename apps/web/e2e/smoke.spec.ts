@@ -16,10 +16,12 @@ test('dev wallet onboarding creates a profile and mints a shareable vouch', asyn
     timeout: 120_000,
   });
 
-  // The heading is server-rendered, so it can show before hydration, and text typed before then
-  // is dropped. The availability line only renders once React owns the input, so refill until it does.
+  // The heading is server-rendered, so it can show before hydration. Text typed before then never
+  // reaches React state, and re-typing the same value fires no onChange (React's value tracker
+  // already holds it). Clear and refill until the availability line — rendered by React — shows.
   const handleInput = page.getByLabel('Handle');
   await expect(async () => {
+    await handleInput.fill('');
     await handleInput.fill(handle);
     await expect(page.getByText(`@${handle} is free`)).toBeVisible({ timeout: 15_000 });
   }).toPass({ timeout: 120_000 });
