@@ -56,6 +56,7 @@ import {
   type QuestWindow,
 } from '../../../lib/attest';
 import { json, withRoute } from '../../../lib/api-route';
+import { decodeVouchClaimedEvent } from '../../../lib/vouch-claimed';
 // The app's one resolved (and validated) network config — no per-route testnet defaults — so
 // the attester signs for the same network, passphrase and contracts as the client.
 import { config, misconfiguredResponse } from '../../../lib/stellar';
@@ -394,36 +395,6 @@ async function getJson(
 
 function isTimeout(e: unknown): boolean {
   return (e as { name?: unknown } | null)?.name === 'TimeoutError';
-}
-
-/**
- * A decoded `vouch/claimed` event value: (vouch_id, from, claimer).
- * Mirrors contracts/reputation/src/lib.rs claim_vouch emit at line ~293.
- */
-export interface VouchClaimedEvent {
-  vouchId: string; // stringified u64
-  from: string;    // G/C address — the voucher
-  claimer: string; // G/C address — the person who claimed
-}
-
-/**
- * Decode one raw `vouch/claimed` event value (a 3-tuple ScVal) into a typed record.
- * Returns null for any event that cannot be decoded — callers skip those silently.
- * Exported so it can be unit-tested independently of the RPC layer.
- */
-export function decodeVouchClaimedEvent(
-  raw: unknown, // scValToNative output for one event's value
-): VouchClaimedEvent | null {
-  if (!Array.isArray(raw) || raw.length !== 3) return null;
-  const [id, from, claimer] = raw;
-  if (
-    (typeof id !== 'number' && typeof id !== 'bigint') ||
-    typeof from !== 'string' ||
-    typeof claimer !== 'string'
-  ) {
-    return null;
-  }
-  return { vouchId: String(id), from, claimer };
 }
 
 /** The ledger a stellar-rpc events cursor points at ("<toid>-<n>"; the ledger is the toid's top 32 bits). */

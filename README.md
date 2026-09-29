@@ -38,11 +38,13 @@ Five Soroban contracts, deployed + cross-contract verified on-chain:
 
 | Contract | Address |
 | --- | --- |
-| Reputation (Social/Earned XP, vouches, `att_set`) | [`CDRYXUS55TKGYEM3YUB3YTJWQKSWWQABK6YPQK7SLEPVALWYK4IR7WCL`](https://stellar.expert/explorer/testnet/contract/CDRYXUS55TKGYEM3YUB3YTJWQKSWWQABK6YPQK7SLEPVALWYK4IR7WCL) |
-| Quest Registry (attester-signed quests) | [`CBEJVYLWTU6BQDL3RXKWW6CYUISRC4SUIVURCG452CTOIANGY2N7V3WI`](https://stellar.expert/explorer/testnet/contract/CBEJVYLWTU6BQDL3RXKWW6CYUISRC4SUIVURCG452CTOIANGY2N7V3WI) |
-| Rewards (USDC tip + Earned-gated claim) | [`CBMO3X3EXKUZAHNAPRSFVBXJJARJD5I5VME5UQ7OSI2OA5Q56UO7TM3G`](https://stellar.expert/explorer/testnet/contract/CBMO3X3EXKUZAHNAPRSFVBXJJARJD5I5VME5UQ7OSI2OA5Q56UO7TM3G) |
-| Registry (handle ↔ address) | [`CCT5EGFZ33IFLMUU6EBMC6NWRLX5TWJS5FICNJFBG7MU5PTAU6PFMVH4`](https://stellar.expert/explorer/testnet/contract/CCT5EGFZ33IFLMUU6EBMC6NWRLX5TWJS5FICNJFBG7MU5PTAU6PFMVH4) |
-| Gate (reputation-gated access) | [`CDX4QTFVT7VOGXCSASD75INCUHNZJUE3DRZDL65Z65PMIYJ5JELP576E`](https://stellar.expert/explorer/testnet/contract/CDX4QTFVT7VOGXCSASD75INCUHNZJUE3DRZDL65Z65PMIYJ5JELP576E) |
+| Reputation (Social/Earned XP, vouches, `att_set`) | [`CBP34OU4D2RN22PVGH5G5EN4HDWHAD5I7VCOLPPB4RD6NMKBJMXY6KT5`](https://stellar.expert/explorer/testnet/contract/CBP34OU4D2RN22PVGH5G5EN4HDWHAD5I7VCOLPPB4RD6NMKBJMXY6KT5) |
+| Quest Registry (attester-signed quests) | [`CBEMRJPYICOVH2IGHXQDDDMQSXRR5YKJUD7QMDNI25PYZFPQNLTPH3PD`](https://stellar.expert/explorer/testnet/contract/CBEMRJPYICOVH2IGHXQDDDMQSXRR5YKJUD7QMDNI25PYZFPQNLTPH3PD) |
+| Rewards (USDC tip + Earned-gated claim) | [`CA4XDPHJAUXYKQ6GGOBMB26N2JMIBPD4MB4CIANCPW53LGS2SVCR65CV`](https://stellar.expert/explorer/testnet/contract/CA4XDPHJAUXYKQ6GGOBMB26N2JMIBPD4MB4CIANCPW53LGS2SVCR65CV) |
+| Registry (handle ↔ address) | [`CDRCCUTSOPGJJ5J7FLSW6PBB6R4SKS2F7YUU24GEKJGUEPA2LZH3A23F`](https://stellar.expert/explorer/testnet/contract/CDRCCUTSOPGJJ5J7FLSW6PBB6R4SKS2F7YUU24GEKJGUEPA2LZH3A23F) |
+| Gate (reputation-gated access) | [`CCOKRQIUL4OY6PTWNAXPC7QKZMJMG2E73UMHGP357XRC6YKGOBUPSSMC`](https://stellar.expert/explorer/testnet/contract/CCOKRQIUL4OY6PTWNAXPC7QKZMJMG2E73UMHGP357XRC6YKGOBUPSSMC) |
+
+The set was redeployed on 2026-09-30 to pick up the constructor, claim-key vouch and award-payload upgrades; the user-activity links further down point at the previous deployment, where that activity happened. `deployments/testnet.json` always holds the current ids.
 
 ### Contract call — transaction hash (verifiable on Stellar Expert)
 
