@@ -60,7 +60,7 @@ export function LandingOnboard() {
           placeholder={t('onboard.placeholder')}
           aria-label={t('onboard.ariaLabel')}
           aria-describedby="landing-handle-status"
-          className="h-11 flex-1 border-0 bg-transparent focus-visible:ring-0"
+          className="h-11 flex-1 border-0 bg-transparent focus-visible:outline-none"
         />
         <Button type="submit" variant="flow" size="md" disabled={creating || avail === 'taken' || avail === 'reserved'} className="shrink-0">
           {creating ? t('onboard.creating') : t('onboard.startFree')}

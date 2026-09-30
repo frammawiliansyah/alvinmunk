@@ -115,6 +115,12 @@
   h1, h2, h3, h4 {
     @apply font-display tracking-tight;
   }
+  /* One focus ring for the whole app, driven by --ring (see design tokens §9).
+     Keyboard-only: :focus-visible skips the ring on a mouse/touch click. */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
 }
 
 @layer utilities {

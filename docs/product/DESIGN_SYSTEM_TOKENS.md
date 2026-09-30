@@ -224,3 +224,22 @@ modal-overlay 70 · modal 80`.
   (`localStorage` key `alvinmunk.theme`), else the OS `prefers-color-scheme`.
 - Tokens are the **only** color source — no raw hex in components. A color not in this
   file does not exist in the product.
+
+## 9. Focus ring
+
+One global rule in `globals.css` (`@layer base`) puts the same ring on every focusable
+element in both themes:
+
+```css
+:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+```
+
+`--ring` is 3:1+ against `--background` in both themes, so this alone clears visibility —
+components must not hand-pick their own focus ring colour (`ring-primary`, `ring-lime`,
+etc.). `Input`/`Textarea` add `focus-visible:border-ring` on top (same token, just on the
+border) and a one-off container that wraps a plain-looking `Input` in a bigger control
+(e.g. the landing pill) may put the ring on that container instead and suppress the
+inner input's own outline — but the colour must still trace back to `--ring`.
