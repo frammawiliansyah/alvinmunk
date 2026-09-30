@@ -14,17 +14,20 @@ const LABEL: Record<StateKind, string> = {
 
 /**
  * An illustrated state moment (success / empty). Rendered at or below intrinsic size so
- * it never upscales. `size` is the max rendered WIDTH.
+ * it never upscales. `size` is the max rendered WIDTH. Loads lazily by default — pass
+ * `priority` for state art that's above the fold.
  */
 export function StateArt({
   kind,
   size = 220,
   alt,
+  priority = false,
   className,
 }: {
   kind: StateKind;
   size?: number;
   alt?: string;
+  priority?: boolean;
   className?: string;
 }) {
   const m = STATE[kind];
@@ -37,6 +40,8 @@ export function StateArt({
       width={width}
       height={height}
       draggable={false}
+      loading={priority ? 'eager' : 'lazy'}
+      decoding={priority ? 'sync' : 'async'}
       className={cn('select-none', className)}
     />
   );

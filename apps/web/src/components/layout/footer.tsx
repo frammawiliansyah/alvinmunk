@@ -5,7 +5,6 @@ import { Logo } from '@/components/brand/logo';
 import { NetworkBadge } from '@/components/layout/network-badge';
 import { LanguageSwitcher } from '@/components/LanguageSwitcher';
 import { useTranslations } from '@/lib/i18n';
-import { asset } from '@/lib/assets';
 
 export function Footer() {
   const t = useTranslations();
@@ -40,8 +39,7 @@ export function Footer() {
       {/* faint sticker-tile texture — warmth under the cosmic base, masked to stay subtle */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.04] [mask-image:linear-gradient(to_bottom,transparent,black)]"
-        style={{ backgroundImage: `url(${asset('backgrounds/tile-256.png')})`, backgroundSize: '180px' }}
+        className="pointer-events-none absolute inset-0 bg-dot-lattice opacity-[0.04] [mask-image:linear-gradient(to_bottom,transparent,black)]"
       />
 
       <div className="container grid gap-10 py-14 md:grid-cols-[1.6fr_1fr_1fr_1fr]">

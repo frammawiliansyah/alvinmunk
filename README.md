@@ -1,5 +1,7 @@
 # 🛰️ alvinmunk
 
+![alvinmunk landing page](./docs/media/deck/landing-m.png)
+
 > **Collect people, not points.** A social, gamified, non-betting *proof-of-people* reputation game on Stellar/Soroban — built for the Rise In **Stellar Journey to Mastery** belt program (White → Master).
 
 **▶ Live on Stellar testnet: [alvinmunk.vercel.app](https://alvinmunk.vercel.app)**

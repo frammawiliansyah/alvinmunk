@@ -7,7 +7,6 @@ import { useTranslations } from '@/lib/i18n';
 import { Crest } from '@/components/brand/crest';
 import { AvatarPicker } from '@/components/AvatarPicker';
 import { type FaceId } from '@/lib/avatar';
-import { asset } from '@/lib/assets';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -24,8 +23,7 @@ export function Onboarding() {
     <div className="relative container flex max-w-md flex-col items-center gap-8 py-20">
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.05] [mask-image:radial-gradient(circle_at_top,black,transparent_70%)]"
-        style={{ backgroundImage: `url(${asset('backgrounds/app-bg.png')})`, backgroundSize: 'cover', backgroundPosition: 'top' }}
+        className="pointer-events-none absolute inset-0 -z-10 bg-dot-lattice opacity-[0.05] [mask-image:radial-gradient(circle_at_top,black,transparent_70%)]"
       />
       <div className="text-center">
         <p className="eyebrow mb-3">{t('onboard.eyebrow')}</p>

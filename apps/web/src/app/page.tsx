@@ -13,7 +13,7 @@ import { AuroraText } from '@/components/fx/shiny-text';
 import { Meteors } from '@/components/fx/meteors';
 import { Sticker } from '@/components/ui/sticker';
 import { buttonVariants } from '@/components/ui/button';
-import { asset, type StickerName } from '@/lib/assets';
+import { type StickerName } from '@/lib/assets';
 import { cn } from '@/lib/utils';
 import { LandingOnboard } from '@/components/landing-onboard';
 import { useTranslations } from '@/lib/i18n';
@@ -275,8 +275,7 @@ export default function LandingPage() {
       <section className="relative overflow-hidden py-32 text-center">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.05] [mask-image:radial-gradient(circle_at_center,black,transparent_70%)]"
-          style={{ backgroundImage: `url(${asset('backgrounds/landing-hero.png')})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+          className="pointer-events-none absolute inset-0 bg-dot-lattice opacity-[0.05] [mask-image:radial-gradient(circle_at_center,black,transparent_70%)]"
         />
         <Meteors number={18} />
         <Sticker name="burst-wow" size={92} rotate={-12} className="pointer-events-none absolute left-[12%] top-16 hidden motion-safe:animate-float md:block" />

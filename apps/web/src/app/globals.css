@@ -195,6 +195,14 @@
     mask-image: radial-gradient(circle at 50% 40%, black 0%, transparent 78%);
   }
 
+  /* Faint sticker-collage stand-in — a scattered dot lattice, evoking the confetti of the
+     sticker kit without shipping a painted PNG for it. Callers dim it further with their own
+     opacity-[…] + mask-image (it used to be a background-image url() at 4–5% opacity — #506). */
+  .bg-dot-lattice {
+    background-image: radial-gradient(hsl(var(--hairline)) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+  }
+
   /* Spotlight follow — a cursor-tracked glow (set --mx/--my in px from JS). Pairs with
      interactive cards (Magic-Card style hover). */
   .spotlight {

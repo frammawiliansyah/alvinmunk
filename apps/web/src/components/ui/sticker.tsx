@@ -6,6 +6,7 @@ import { STICKER, TAPE, asset, type StickerName, type TapeCorner } from '@/lib/a
  * A decorative sticker from the asset kit. Rendered as a plain <img> (unoptimized →
  * lossless), non-interactive and unselectable. Height is derived from the intrinsic
  * aspect ratio; `size` is the rendered WIDTH and should stay at or below intrinsic.
+ * Loads lazily by default — pass `priority` for a sticker that's above the fold.
  */
 export function Sticker({
   name,
@@ -13,6 +14,7 @@ export function Sticker({
   rotate,
   pixelated = false,
   alt = '',
+  priority = false,
   className,
 }: {
   name: StickerName;
@@ -20,6 +22,7 @@ export function Sticker({
   rotate?: number;
   pixelated?: boolean;
   alt?: string;
+  priority?: boolean;
   className?: string;
 }) {
   const m = STICKER[name];
@@ -33,6 +36,8 @@ export function Sticker({
       height={height}
       draggable={false}
       aria-hidden={alt === '' ? true : undefined}
+      loading={priority ? 'eager' : 'lazy'}
+      decoding={priority ? 'sync' : 'async'}
       style={rotate ? { transform: `rotate(${rotate}deg)` } : undefined}
       className={cn(
         'pointer-events-none select-none',
@@ -47,10 +52,12 @@ export function Sticker({
 export function Tape({
   corner,
   size = 60,
+  priority = false,
   className,
 }: {
   corner: TapeCorner;
   size?: number;
+  priority?: boolean;
   className?: string;
 }) {
   const m = TAPE[corner];
@@ -70,6 +77,8 @@ export function Tape({
       width={width}
       height={height}
       draggable={false}
+      loading={priority ? 'eager' : 'lazy'}
+      decoding={priority ? 'sync' : 'async'}
       className={cn('pointer-events-none absolute select-none opacity-90', pos[corner], className)}
     />
   );

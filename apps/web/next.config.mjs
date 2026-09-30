@@ -47,8 +47,9 @@ const nextConfig = {
   // passkey-kit (+ its sibling SDKs) also ship raw, uncompiled TS → transpile them too.
   transpilePackages: ['@alvinmunk/shared', '@alvinmunk/sdk', 'passkey-kit', 'passkey-kit-sdk', 'sac-sdk', '@stellar/stellar-sdk'],
   images: {
-    // The sticker asset kit (public/assets/**) is already web-optimized art; skip Next's
-    // recompression so every sticker/illustration stays pixel-for-pixel lossless.
+    // The sticker asset kit (public/assets/**) ships as lossless WebP (already web-optimized
+    // art); skip Next's recompression so every sticker/illustration stays pixel-for-pixel
+    // lossless.
     unoptimized: true,
   },
   webpack: (config, { webpack }) => {
