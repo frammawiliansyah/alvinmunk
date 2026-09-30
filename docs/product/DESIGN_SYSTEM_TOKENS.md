@@ -166,7 +166,9 @@ Load with `next/font` (variable, `display: "swap"`, subset latin). Headings get
 - **Spacing:** Tailwind default 4px scale. Section vertical rhythm: `py-16 md:py-24`.
 - **Container:** `max-w-md` (app surfaces, mobile-first) · `max-w-6xl` (marketing).
 - **Radius:** `--radius: 0.875rem` → `sm 0.375rem`, `md 0.625rem`, `lg 0.875rem`,
-  `xl 1.125rem` (`tailwind.config.ts` `borderRadius`), `full` for crests/avatars/pills.
+  `xl 1.125rem`, `2xl 1.375rem`, `3xl 1.625rem` (`tailwind.config.ts` `borderRadius`,
+  each step `var(--radius)` ± a fixed offset so the scale stays monotonic), `full`
+  for crests/avatars/pills.
 - **Borders:** 1px `hsl(var(--border))`; cards use `border + bg-card`.
 
 ## 4. Elevation & glow (cosmic, not material)
@@ -174,11 +176,14 @@ Load with `next/font` (variable, `display: "swap"`, subset latin). Headings get
 We don't use heavy drop shadows (Material). We use **soft glow** for warmth and a starfield
 backdrop.
 
-Tailwind `boxShadow` (`apps/web/tailwind.config.ts`); the glows read the colour tokens, so
-they follow the theme:
+Tailwind `boxShadow` (`apps/web/tailwind.config.ts`); every shadow reads a CSS variable, so
+they follow the theme (including `--glass-shadow`, which flips from near-black in dark mode
+to a soft mid-tone in light mode):
 
 ```css
-shadow-card:         0 1px 0 0 hsl(0 0% 100% / 0.04) inset, 0 8px 30px -12px hsl(230 60% 2% / 0.8);
+shadow-card:         0 1px 0 0 hsl(var(--hairline) / 0.06) inset, 0 8px 30px -12px hsl(var(--glass-shadow) / 0.8);
+shadow-popover:      0 1px 0 0 hsl(var(--hairline) / 0.06) inset, 0 12px 40px -16px hsl(var(--glass-shadow) / 0.85);  /* dropdowns, dialogs */
+shadow-toast:        0 1px 0 0 hsl(var(--hairline) / 0.06) inset, 0 16px 48px -20px hsl(var(--glass-shadow) / 0.9);  /* toasts, banners */
 shadow-glow-primary: 0 0 24px -4px hsl(var(--primary) / 0.45);  /* CTA / ignite moment */
 shadow-glow-onchain: 0 0 24px -4px hsl(var(--onchain) / 0.40);  /* on-chain = same violet */
 ```
