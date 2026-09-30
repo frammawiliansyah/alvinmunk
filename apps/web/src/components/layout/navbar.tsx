@@ -59,6 +59,7 @@ export function Navbar() {
 
   return (
     <header
+      data-app-navbar
       className={cn(
         'sticky top-0 z-40 backdrop-blur-xl transition-colors duration-300',
         scrolled ? 'border-b border-border/70 bg-background/80' : 'border-b border-transparent bg-background/30',

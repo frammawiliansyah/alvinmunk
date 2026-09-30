@@ -115,6 +115,16 @@
   h1, h2, h3, h4 {
     @apply font-display tracking-tight;
   }
+
+  ::selection {
+    background: hsl(var(--primary) / .35);
+    color: hsl(var(--foreground));
+  }
+
+  html {
+    scrollbar-color: hsl(var(--border)) transparent;
+    scrollbar-width: thin;
+  }
 }
 
 @layer utilities {
@@ -271,5 +281,70 @@
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+/* Print: force the light tokens (the site is dark-first, but a near-black page eats ink)
+   and drop the decorative/fixed chrome that only makes sense on screen. */
+@media print {
+  :root {
+    color-scheme: light !important;
+
+    --background: 264 52% 96% !important;
+    --foreground: 265 40% 12% !important;
+    --card: 266 38% 98% !important;
+    --card-foreground: 265 40% 12% !important;
+    --popover: 266 40% 99% !important;
+    --popover-foreground: 265 40% 12% !important;
+    --primary: 265 100% 60% !important;
+    --primary-foreground: 0 0% 100% !important;
+    --secondary: 157 84% 45% !important;
+    --secondary-foreground: 265 60% 8% !important;
+    --muted: 265 20% 94% !important;
+    --muted-foreground: 252 14% 40% !important;
+    --accent: 36 100% 55% !important;
+    --accent-foreground: 265 60% 8% !important;
+    --destructive: 350 82% 55% !important;
+    --destructive-foreground: 265 60% 8% !important;
+    --success: 157 84% 45% !important;
+    --warning: 38 95% 55% !important;
+    --border: 265 26% 85% !important;
+    --input: 265 26% 85% !important;
+    --ring: 265 100% 60% !important;
+    --starlight: 265 60% 15% !important;
+    --onchain: 265 100% 60% !important;
+    --tertiary: 193 100% 45% !important;
+    --flow-violet: 265 100% 68% !important;
+    --surface: 266 34% 97% !important;
+    --surface-2: 266 30% 93% !important;
+    --hairline: 260 60% 15% !important;
+    --lime: 79 94% 45% !important;
+    --lime-foreground: 265 60% 8% !important;
+    --nebula-a: 255 60% 80% !important;
+    --nebula-b: 24 70% 82% !important;
+    --aurora-base: 228 40% 96% !important;
+    --glass-shadow: 230 40% 30% !important;
+  }
+
+  body {
+    background: hsl(var(--background)) !important;
+    color: hsl(var(--foreground)) !important;
+  }
+
+  /* Fixed overlays and app chrome that don't belong on paper. */
+  .nebula,
+  .grain::after,
+  [data-app-navbar],
+  footer,
+  [data-sonner-toaster] {
+    display: none !important;
+  }
+
+  /* Spell out where links go, since a printed page can't be clicked. */
+  a[href]:not([href^='#']):not([href^='javascript:'])::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.8em;
+    font-weight: normal;
+    word-break: break-all;
   }
 }
