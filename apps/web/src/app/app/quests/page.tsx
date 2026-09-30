@@ -28,7 +28,7 @@ export default function QuestsPage() {
         <h1 className="font-display text-2xl font-semibold">{t('quests.page.title')}</h1>
         <p className="mt-1 max-w-prose text-sm text-muted-foreground text-balance">
           {before}
-          <span className="text-secondary">{earnedXP}</span>
+          <span className="text-secondary-text">{earnedXP}</span>
           {after}
         </p>
       </header>

@@ -29,6 +29,7 @@ light theme (`:root.light`) redefines every token (see §8)._
   /* Mint green — earned / verified energy */
   --secondary: 157 84% 52%;
   --secondary-foreground: 265 60% 6%;
+  --secondary-text: 157 84% 52%;     /* text-safe variant, see §1a */
 
   --muted: 265 20% 14%;
   --muted-foreground: 252 14% 67%;
@@ -36,11 +37,15 @@ light theme (`:root.light`) redefines every token (see §8)._
   /* Warm gold — the human/vouch accent, used sparingly */
   --accent: 36 100% 64%;
   --accent-foreground: 265 60% 6%;
+  --accent-text: 36 100% 64%;
 
   --destructive: 350 82% 62%;
   --destructive-foreground: 265 60% 6%;
+  --destructive-text: 350 82% 62%;
   --success: 157 84% 52%;
+  --success-text: 157 84% 52%;
   --warning: 38 95% 62%;
+  --warning-text: 38 95% 62%;
 
   --border: 265 26% 16%;
   --input: 265 26% 16%;
@@ -53,6 +58,7 @@ light theme (`:root.light`) redefines every token (see §8)._
 
   /* Signature flow + depth surfaces */
   --tertiary: 193 100% 52%;          /* cyan — social / connection */
+  --tertiary-text: 193 100% 52%;
   --flow-violet: 265 100% 66%;       /* violet stop of .flow (light: 68%, for its dark label) */
   --surface: 266 34% 9%;
   --surface-2: 266 30% 12%;
@@ -61,6 +67,7 @@ light theme (`:root.light`) redefines every token (see §8)._
   /* Sticker-kit lime — playful human accent (#C4FA4E); never on money/proof UI */
   --lime: 79 94% 64%;
   --lime-foreground: 265 60% 6%;
+  --lime-text: 79 94% 64%;
 
   /* Decorative tokens (nebula, aurora, glass) */
   --nebula-a: 255 60% 16%;
@@ -83,14 +90,19 @@ light theme (`:root.light`) redefines every token (see §8)._
   --primary-foreground: 0 0% 100%;
   --secondary: 157 84% 45%;
   --secondary-foreground: 265 60% 8%;
+  --secondary-text: 157 84% 24%;
   --muted: 265 20% 94%;
   --muted-foreground: 252 14% 40%;
   --accent: 36 100% 55%;
   --accent-foreground: 265 60% 8%;
+  --accent-text: 36 100% 28%;
   --destructive: 350 82% 55%;
   --destructive-foreground: 265 60% 8%;
+  --destructive-text: 350 82% 44%;
   --success: 157 84% 45%;
+  --success-text: 157 84% 24%;
   --warning: 38 95% 55%;
+  --warning-text: 38 95% 28%;
   --border: 265 26% 85%;
   --input: 265 26% 85%;
   --ring: 265 100% 60%;
@@ -98,12 +110,14 @@ light theme (`:root.light`) redefines every token (see §8)._
   --onchain: 265 100% 60%;
   --radius: 0.875rem;
   --tertiary: 193 100% 45%;
+  --tertiary-text: 193 100% 27%;
   --flow-violet: 265 100% 68%;
   --surface: 266 34% 97%;
   --surface-2: 266 30% 93%;
   --hairline: 260 60% 15%;
   --lime: 79 94% 45%;
   --lime-foreground: 265 60% 8%;
+  --lime-text: 79 94% 22%;
   --nebula-a: 255 60% 80%;
   --nebula-b: 24 70% 82%;
   --aurora-base: 228 40% 96%;
@@ -123,7 +137,24 @@ and the decorative tokens are not Tailwind colors; only the `.glass`, `.grid-fai
 
 **Usage law:** violet/`onchain` = on-chain / verified moments; mint/`secondary` = earned
 energy; gold/`accent` = human warmth (vouch), used sparingly. No raw hex in components —
-every color must trace back to a token in this file.
+every color must trace back to a token in this file. No raw Tailwind palette colors
+(`amber-*`, `yellow-*`, etc.) either — use `warning`/`accent` instead.
+
+### 1a. Text-safe variants
+
+`secondary`, `success`, `warning`, `accent`, `tertiary`, `destructive` and `lime` keep their
+45–55%-lightness fill values in the light theme (for badges, dots, borders), but at that
+lightness they read 1.4–3.7:1 as **text** on the light background — well under the 4.5:1 AA
+floor. Each of those tokens has a `-text` sibling (`--secondary-text`,
+`--destructive-text`, …) that is darkened in the light theme only (identical to the fill in
+the dark theme, where the fill already clears AA) to guarantee ≥4.5:1 against `background`,
+`card`, `surface`, `surface-2` and `muted`. Tailwind exposes these as a `text` shade on the
+same color (`text-secondary-text`, `text-destructive-text`, …) — always use the `-text`
+variant for text, never the bare fill token; `apps/web/src/app/muted-foreground-contrast.test.ts`
+checks every `-text` token in both themes and fails on a bare `text-<token>` class or a raw
+`amber-*`/`yellow-*` class anywhere under `src/`. Opacity modifiers (`text-secondary-text/80`)
+are not safe either — fading darkens the text less than it seems and can drop back under AA
+on light, so text always uses the token at full strength.
 
 **`onchain` is one colour:** `--onchain` equals `--primary` in both themes, and everything
 named `onchain` uses it: `Badge variant="onchain"` (`border-onchain/30 bg-onchain/10

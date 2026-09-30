@@ -96,7 +96,7 @@ export default function AdminPage() {
       <Shell>
         <p className="text-sm text-muted-foreground">Connect the admin wallet to continue.</p>
         <div className="mt-4">{connectButton('Connect wallet')}</div>
-        {connectError && <p className="mt-3 text-sm text-destructive">{connectError}</p>}
+        {connectError && <p className="mt-3 text-sm text-destructive-text">{connectError}</p>}
       </Shell>
     );
   }
@@ -134,7 +134,7 @@ export default function AdminPage() {
   const current = sections.includes(section) ? section : sections[0];
   return (
     <div className="container max-w-5xl py-12">
-      <p className="text-xs uppercase tracking-[0.25em] text-secondary">admin // content</p>
+      <p className="text-xs uppercase tracking-[0.25em] text-secondary-text">admin // content</p>
       <div className="mt-2 flex flex-wrap items-center gap-3">
         <h1 className="text-3xl font-semibold">Content</h1>
         <Badge variant="onchain">on-chain admin · {shortAddr(wallet.address)}</Badge>
@@ -173,7 +173,7 @@ export default function AdminPage() {
 function Shell({ children }: { children: React.ReactNode }) {
   return (
     <div className="container max-w-5xl py-12">
-      <p className="text-xs uppercase tracking-[0.25em] text-secondary">admin</p>
+      <p className="text-xs uppercase tracking-[0.25em] text-secondary-text">admin</p>
       <div className="mt-3">{children}</div>
     </div>
   );
@@ -239,7 +239,7 @@ function WriteStatus({ write }: { write: ReturnType<typeof useWrite> }) {
           </div>
         </div>
       )}
-      {write.error && <p className="text-sm text-destructive">{write.error}</p>}
+      {write.error && <p className="text-sm text-destructive-text">{write.error}</p>}
       {write.receipt && (
         <div className="rounded-xl border border-border bg-card/40 p-4 text-sm">
           <p className="font-medium">Confirmed on-chain.</p>
@@ -275,7 +275,7 @@ function Panel({ title, note, children }: { title: string; note?: string; childr
 
 function LoadError({ message, retry }: { message: string; retry: () => Promise<void> }) {
   return (
-    <p className="mt-4 flex items-center gap-3 text-sm text-destructive">
+    <p className="mt-4 flex items-center gap-3 text-sm text-destructive-text">
       {message}
       <Button size="sm" variant="outline" onClick={() => void retry()}>
         Retry
@@ -638,7 +638,7 @@ function QuestsAdmin({ wallet }: { wallet: Wallet }) {
           Look up
         </Button>
       </div>
-      {lookupError && <p className="mt-3 text-sm text-destructive">{lookupError}</p>}
+      {lookupError && <p className="mt-3 text-sm text-destructive-text">{lookupError}</p>}
       {found && !q && (
         <p className="mt-3 text-sm text-muted-foreground">Quest {found.id} doesn’t exist yet.</p>
       )}

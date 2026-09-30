@@ -17,8 +17,8 @@ export function Stamp({
     accent === 'primary'
       ? 'border-primary/55 text-primary/85'
       : accent === 'tertiary'
-        ? 'border-tertiary/55 text-tertiary/85'
-        : 'border-secondary/55 text-secondary/85';
+        ? 'border-tertiary/55 text-tertiary-text'
+        : 'border-secondary/55 text-secondary-text';
   return (
     <span
       className={cn(

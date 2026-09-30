@@ -86,7 +86,7 @@ export function HandleTransfer({ wallet }: { wallet: Wallet }) {
             </p>
             <p className="text-xs text-muted-foreground">{t('handleTransfer.xpNote')}</p>
             {holdings.held ? (
-              <p className="text-xs text-destructive">
+              <p className="text-xs text-destructive-text">
                 {t('handleTransfer.targetHasHandle', { handle: holdings.held })}
               </p>
             ) : (
@@ -99,7 +99,7 @@ export function HandleTransfer({ wallet }: { wallet: Wallet }) {
           </>
         )}
         {done && (
-          <div className="rounded-xl bg-success/10 p-3 text-xs text-success ring-1 ring-success/30">
+          <div className="rounded-xl bg-success/10 p-3 text-xs text-success-text ring-1 ring-success/30">
             <p className="font-semibold">{t('handleTransfer.done', { handle: done.handle })}</p>
             <a
               href={txExplorerUrl(done.hash)}
@@ -111,7 +111,7 @@ export function HandleTransfer({ wallet }: { wallet: Wallet }) {
             </a>
           </div>
         )}
-        {error && <p className="text-xs text-destructive">{error}</p>}
+        {error && <p className="text-xs text-destructive-text">{error}</p>}
       </CardContent>
     </Card>
   );

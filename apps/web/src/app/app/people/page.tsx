@@ -181,7 +181,7 @@ export default function PeoplePage() {
 
           {state === 'error' && (
             <div className="flex flex-col items-center gap-4 py-10 text-center">
-              <p className="text-sm text-destructive">Something went wrong — try again in a moment.</p>
+              <p className="text-sm text-destructive-text">Something went wrong — try again in a moment.</p>
             </div>
           )}
 
@@ -201,11 +201,11 @@ export default function PeoplePage() {
                   </p>
                   <div className="mt-1.5 flex items-center gap-4 font-mono text-xs text-muted-foreground">
                     <span className="inline-flex items-center gap-1">
-                      <Star className={cn('size-3.5', result.social > 0 ? 'text-yellow-400' : 'text-muted-foreground/40')} />
+                      <Star className={cn('size-3.5', result.social > 0 ? 'text-accent-text' : 'text-muted-foreground/40')} />
                       {result.social} Social
                     </span>
                     <span className="inline-flex items-center gap-1">
-                      <Sparkles className={cn('size-3.5', result.earned > 0 ? 'text-lime' : 'text-muted-foreground/40')} />
+                      <Sparkles className={cn('size-3.5', result.earned > 0 ? 'text-lime-text' : 'text-muted-foreground/40')} />
                       {result.earned} Earned
                     </span>
                   </div>

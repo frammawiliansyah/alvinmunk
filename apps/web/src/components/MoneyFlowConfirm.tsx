@@ -107,7 +107,7 @@ export function MoneyFlowConfirm({
 
         <p className="text-center text-2xl font-bold text-primary">{request.amount} USDC</p>
 
-        <p className="rounded-lg bg-destructive/10 p-3 text-sm font-medium text-destructive">
+        <p className="rounded-lg bg-destructive/10 p-3 text-sm font-medium text-destructive-text">
           {t('moneyFlowConfirm.realMoneyWarning')}
         </p>
 

@@ -69,9 +69,9 @@ export function LandingOnboard() {
       </div>
       <p id="landing-handle-status" aria-live="polite" className="mt-2 h-4 pl-4 text-xs">
         {avail === 'checking' && <span className="text-muted-foreground">{t('onboard.checking')}</span>}
-        {avail === 'free' && <span className="text-secondary">{t('onboard.handleFree', { handle: normalizeHandle(handle) })}</span>}
-        {avail === 'taken' && <span className="text-destructive">{t('onboard.handleTaken', { handle: normalizeHandle(handle) })}</span>}
-        {avail === 'reserved' && reservedUntil && <span className="text-destructive">{t('onboard.handleReserved', { handle: normalizeHandle(handle), date: reservedUntil })}</span>}
+        {avail === 'free' && <span className="text-secondary-text">{t('onboard.handleFree', { handle: normalizeHandle(handle) })}</span>}
+        {avail === 'taken' && <span className="text-destructive-text">{t('onboard.handleTaken', { handle: normalizeHandle(handle) })}</span>}
+        {avail === 'reserved' && reservedUntil && <span className="text-destructive-text">{t('onboard.handleReserved', { handle: normalizeHandle(handle), date: reservedUntil })}</span>}
         {avail === 'idle' && <span className="text-muted-foreground">{t('onboard.pill')}</span>}
       </p>
       <div className="mt-4 flex flex-col items-center gap-2">

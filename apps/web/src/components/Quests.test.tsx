@@ -119,7 +119,7 @@ describe('Quests', () => {
     expect(toastMock.success).toHaveBeenCalledOnce();
     expect(toastMock.error).not.toHaveBeenCalled();
     expect(container.textContent).toContain(SUCCESS_ART);
-    expect(container.querySelector('p.text-destructive')).toBeNull();
+    expect(container.querySelector('p.text-destructive-text')).toBeNull();
   }
 
   it('re-reads the Earned XP and streak after a verified quest', async () => {
@@ -197,7 +197,7 @@ describe('Quests', () => {
 
     expect(toastMock.success).not.toHaveBeenCalled();
     expect(toastMock.error).toHaveBeenCalledWith('Vouch for 3 people first');
-    expect(container.querySelector('p.text-destructive')?.textContent).toBe('Vouch for 3 people first');
+    expect(container.querySelector('p.text-destructive-text')?.textContent).toBe('Vouch for 3 people first');
     expect(container.textContent).not.toContain(SUCCESS_ART);
   });
 

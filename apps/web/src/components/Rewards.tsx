@@ -143,7 +143,7 @@ export function Rewards({ address }: { address: string }) {
             {t('rewards.dailyLeft', { amount: stroopsToUsdc(remainingToday) })}
           </p>
         )}
-        {walletBlock !== undefined && <p className="mb-3 text-sm text-destructive">{errors[walletBlock]}</p>}
+        {walletBlock !== undefined && <p className="mb-3 text-sm text-destructive-text">{errors[walletBlock]}</p>}
 
         {rows === null ? (
           <div className="flex flex-col gap-2">
@@ -181,7 +181,7 @@ export function Rewards({ address }: { address: string }) {
                         · needs a {minStreak}-week streak (you: {streak})
                       </span>
                     )}
-                    {hint && <span className="mt-0.5 block text-xs text-destructive">{hint}</span>}
+                    {hint && <span className="mt-0.5 block text-xs text-destructive-text">{hint}</span>}
                   </span>
                   <Button
                     size="sm"
@@ -210,12 +210,12 @@ export function Rewards({ address }: { address: string }) {
             href={txExplorerUrl(hash)}
             target="_blank"
             rel="noreferrer"
-            className="mt-2 block text-center text-xs text-secondary underline"
+            className="mt-2 block text-center text-xs text-secondary-text underline"
           >
             {t('rewards.claimedOnChain')}
           </a>
         )}
-        {error && <p className="mt-2 text-sm text-destructive">{error}</p>}
+        {error && <p className="mt-2 text-sm text-destructive-text">{error}</p>}
 
         <AnchorCashout address={address} />
       </div>
@@ -343,7 +343,7 @@ function AnchorCashout({ address }: { address: string }) {
             </p>
           )}
           {w && (
-            <p className="mt-2 text-xs text-secondary" aria-live="polite">
+            <p className="mt-2 text-xs text-secondary-text" aria-live="polite">
               {t('rewards.cashout.withdrawal', { status: w.status.replaceAll('_', ' ') })}
               {w.message ? ` — ${w.message}` : ''}
             </p>
@@ -366,12 +366,12 @@ function AnchorCashout({ address }: { address: string }) {
               href={txExplorerUrl(paidHash)}
               target="_blank"
               rel="noreferrer"
-              className="mt-2 block text-xs text-secondary underline"
+              className="mt-2 block text-xs text-secondary-text underline"
             >
               {t('rewards.cashout.paid')}
             </a>
           )}
-          {error && <p className="mt-2 text-sm text-destructive">{error}</p>}
+          {error && <p className="mt-2 text-sm text-destructive-text">{error}</p>}
         </>
       ) : (
         <p className="text-xs text-muted-foreground">{t('rewards.cashout.unavailable')}</p>

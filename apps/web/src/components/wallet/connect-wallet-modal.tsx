@@ -21,7 +21,7 @@ type Option = {
 
 const OPTIONS: Option[] = [
   { id: 'freighter', name: 'Freighter', blurb: 'Browser extension', tint: 'bg-primary/20 text-primary', connect: connectFreighter },
-  { id: 'albedo', name: 'Albedo', blurb: 'Web wallet · no install', tint: 'bg-tertiary/20 text-tertiary', connect: connectAlbedo },
+  { id: 'albedo', name: 'Albedo', blurb: 'Web wallet · no install', tint: 'bg-tertiary/20 text-tertiary-text', connect: connectAlbedo },
   { id: 'xbull', name: 'xBull', blurb: 'Coming soon', tint: 'bg-muted text-muted-foreground' },
   { id: 'rabet', name: 'Rabet', blurb: 'Coming soon', tint: 'bg-muted text-muted-foreground' },
 ];
@@ -132,7 +132,7 @@ export function ConnectWalletModal({
             })}
           </ul>
 
-          {error && <p className="mt-3 text-sm text-destructive">{error}</p>}
+          {error && <p className="mt-3 text-sm text-destructive-text">{error}</p>}
 
           <p className="mt-4 text-center text-[11px] text-muted-foreground">
             Testnet only · your keys never leave your wallet.

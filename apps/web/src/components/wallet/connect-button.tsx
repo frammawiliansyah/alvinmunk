@@ -262,7 +262,7 @@ export function ConnectButton({ onNavigate }: { onNavigate?: () => void } = {}) 
                 closeMenu(true);
                 toast(t('wallet.disconnected'));
               }}
-              className={cn(item, 'text-destructive hover:bg-destructive/10')}
+              className={cn(item, 'text-destructive-text hover:bg-destructive/10')}
             >
               <LogOut /> {t('wallet.disconnect')}
             </button>

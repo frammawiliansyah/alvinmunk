@@ -122,9 +122,9 @@ export default function WalletPage() {
                 <div
                   className={
                     result.status === 'SUCCESS'
-                      ? 'rounded-xl bg-success/10 p-3 text-xs text-success ring-1 ring-success/30'
+                      ? 'rounded-xl bg-success/10 p-3 text-xs text-success-text ring-1 ring-success/30'
                       : result.status === 'FAILED'
-                        ? 'rounded-xl bg-destructive/10 p-3 text-xs text-destructive ring-1 ring-destructive/30'
+                        ? 'rounded-xl bg-destructive/10 p-3 text-xs text-destructive-text ring-1 ring-destructive/30'
                         : 'rounded-xl bg-muted p-3 text-xs text-muted-foreground'
                   }
                 >
@@ -152,7 +152,7 @@ export default function WalletPage() {
         </div>
       )}
 
-      {error && <p className="mt-4 text-sm text-destructive">{error}</p>}
+      {error && <p className="mt-4 text-sm text-destructive-text">{error}</p>}
     </div>
   );
 }

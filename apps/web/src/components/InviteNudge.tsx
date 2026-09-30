@@ -43,7 +43,7 @@ export function InviteNudge() {
       <div className="flex items-center justify-between gap-3 p-4">
         <Sticker name="hand-shake" size={48} className="hidden shrink-0 sm:block" />
         <p className="flex-1 text-sm">
-          <span className="font-mono text-secondary">@{ref}</span> {t('inviteNudge.message')}
+          <span className="font-mono text-secondary-text">@{ref}</span> {t('inviteNudge.message')}
         </p>
         <button onClick={dismiss} aria-label={t('inviteNudge.dismiss')} className="shrink-0 text-muted-foreground hover:text-foreground">
           <X className="size-4" />

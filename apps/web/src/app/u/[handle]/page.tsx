@@ -106,7 +106,7 @@ export default function ProfilePage({
               </p>
             ) : (
               <>
-                <p className="font-mono text-xs uppercase tracking-wider text-secondary">available</p>
+                <p className="font-mono text-xs uppercase tracking-wider text-secondary-text">available</p>
                 <p className="text-sm text-muted-foreground text-balance">
                   This handle isn&apos;t claimed yet. Open the app, pick it, and it stamps to chain as
                   your profile ID.
@@ -199,7 +199,7 @@ function Field({
   value?: number;
   accent: 'primary' | 'secondary' | 'tertiary';
 }) {
-  const c = accent === 'primary' ? 'text-primary' : accent === 'secondary' ? 'text-secondary' : 'text-tertiary';
+  const c = accent === 'primary' ? 'text-primary' : accent === 'secondary' ? 'text-secondary-text' : 'text-tertiary-text';
   return (
     <div className="p-5">
       <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{label}</p>

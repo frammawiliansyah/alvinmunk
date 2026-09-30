@@ -27,9 +27,9 @@ type Tile = {
 };
 
 const TILES: Tile[] = [
-  { key: 'vouchedBy', icon: Sparkles, tint: 'text-accent' },
-  { key: 'social', icon: Users, tint: 'text-tertiary' },
-  { key: 'earned', icon: ShieldCheck, tint: 'text-secondary' },
+  { key: 'vouchedBy', icon: Sparkles, tint: 'text-accent-text' },
+  { key: 'social', icon: Users, tint: 'text-tertiary-text' },
+  { key: 'earned', icon: ShieldCheck, tint: 'text-secondary-text' },
 ];
 
 /**

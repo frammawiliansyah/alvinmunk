@@ -242,12 +242,12 @@ export function Tip({ address }: { address: string }) {
                 {resolving ? (
                   t('tip.lookingUp')
                 ) : resolved ? (
-                  <span className="flex items-center text-secondary">
+                  <span className="flex items-center text-secondary-text">
                     → <Avatar address={resolved} size={16} ring={false} className="mx-1.5" />
                     {shortAddr(resolved, 6, 6)}
                   </span>
                 ) : (
-                  <span className="text-destructive">{t('tip.noWallet')}</span>
+                  <span className="text-destructive-text">{t('tip.noWallet')}</span>
                 )}
               </div>
             )}
@@ -278,13 +278,13 @@ export function Tip({ address }: { address: string }) {
               href={txExplorerUrl(hash)}
               target="_blank"
               rel="noreferrer"
-              className="mt-1 block text-center text-xs text-secondary underline"
+              className="mt-1 block text-center text-xs text-secondary-text underline"
             >
               {t('tip.confirmed')}
             </a>
           </div>
         )}
-        {error && <p className="mt-2 text-sm text-destructive">{error}</p>}
+        {error && <p className="mt-2 text-sm text-destructive-text">{error}</p>}
       </div>
 
       {pending && (

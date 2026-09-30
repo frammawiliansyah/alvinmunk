@@ -41,7 +41,7 @@ export default async function ScorePage({ params, searchParams }: ScorePageProps
       <div className="container max-w-2xl py-14">
         <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-primary/80">{'// error'}</p>
         <div className="mt-6 flex flex-col items-center gap-4 text-center">
-          <AlertCircle className="size-12 text-destructive" />
+          <AlertCircle className="size-12 text-destructive-text" />
           <h1 className="font-display text-2xl font-semibold">Invalid address</h1>
           <p className="text-muted-foreground">
             Stellar addresses must start with G or C and be 56 characters long.
@@ -109,7 +109,7 @@ export default async function ScorePage({ params, searchParams }: ScorePageProps
           {/* People who vouched */}
           <div className="relative border-border/50 p-6 sm:border-r">
             <div className="flex items-center gap-2">
-              <Sparkles className="size-4 text-accent" />
+              <Sparkles className="size-4 text-accent-text" />
               <span className="text-sm font-medium text-muted-foreground">Vouched by</span>
             </div>
             <p className="mt-2 font-display text-4xl font-semibold tabular-nums">
@@ -123,10 +123,10 @@ export default async function ScorePage({ params, searchParams }: ScorePageProps
           {/* Social XP */}
           <div className="relative border-border/50 p-6 sm:border-r">
             <div className="flex items-center gap-2">
-              <Users className="size-4 text-tertiary" />
+              <Users className="size-4 text-tertiary-text" />
               <span className="text-sm font-medium text-muted-foreground">Social XP</span>
             </div>
-            <p className="mt-2 font-display text-4xl font-semibold tabular-nums text-tertiary">
+            <p className="mt-2 font-display text-4xl font-semibold tabular-nums text-tertiary-text">
               {scores.social.toLocaleString()}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">Clout · not cashable</p>
@@ -135,10 +135,10 @@ export default async function ScorePage({ params, searchParams }: ScorePageProps
           {/* Earned XP */}
           <div className="relative p-6">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="size-4 text-secondary" />
+              <ShieldCheck className="size-4 text-secondary-text" />
               <span className="text-sm font-medium text-muted-foreground">Earned XP</span>
             </div>
-            <p className="mt-2 font-display text-4xl font-semibold tabular-nums text-secondary">
+            <p className="mt-2 font-display text-4xl font-semibold tabular-nums text-secondary-text">
               {scores.earned.toLocaleString()}
             </p>
             <p className="mt-1 text-xs text-muted-foreground">Verified · unlocks USDC</p>

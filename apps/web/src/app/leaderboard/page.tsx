@@ -106,7 +106,7 @@ function Leaderboard({ net }: { net: ReadNetwork | null }) {
         <span
           className={cn(
             'inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.15em]',
-            stale && rows.length > 0 ? 'text-amber-400/90' : (stale ? 'text-destructive/80' : 'text-secondary/80'),
+            stale && rows.length > 0 ? 'text-warning-text' : (stale ? 'text-destructive-text' : 'text-secondary-text'),
           )}
           title={stale ? t('leaderboard.syncTitle.stale') : t('leaderboard.syncTitle.live')}
         >
@@ -114,7 +114,7 @@ function Leaderboard({ net }: { net: ReadNetwork | null }) {
             <span
               className={cn(
                 'size-1.5 rounded-full',
-                stale ? 'bg-amber-400' : 'bg-secondary motion-safe:animate-glow-pulse',
+                stale ? 'bg-warning' : 'bg-secondary motion-safe:animate-glow-pulse',
               )}
             />
           )}
@@ -215,7 +215,7 @@ function Leaderboard({ net }: { net: ReadNetwork | null }) {
                       <div className="mt-0.5 flex items-center gap-2 font-mono text-[10px] uppercase tracking-wider">
                         {isMe && <span className="text-primary">{t('leaderboard.you')}</span>}
                         {e.flagged && (
-                          <span title={t('leaderboard.flaggedTitle')} className="text-warning">
+                          <span title={t('leaderboard.flaggedTitle')} className="text-warning-text">
                             {t('leaderboard.flagged')}
                           </span>
                         )}

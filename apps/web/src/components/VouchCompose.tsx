@@ -237,7 +237,7 @@ export function VouchCompose() {
                   {t('vouch.compose.sent.shareLabel')}
                 </p>
                 <div className="flex items-center gap-2">
-                  <code className="flex-1 truncate font-mono text-xs text-secondary">{link}</code>
+                  <code className="flex-1 truncate font-mono text-xs text-secondary-text">{link}</code>
                   <Button variant="secondary" size="icon" onClick={copy} aria-label={t('vouch.compose.copy')}>
                     {copied === 'single' ? <Check className="size-4" /> : <Copy className="size-4" />}
                   </Button>
@@ -254,7 +254,7 @@ export function VouchCompose() {
                   }).toString()}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-2 inline-block font-mono text-[10px] uppercase tracking-wider text-tertiary hover:underline"
+                  className="mt-2 inline-block font-mono text-[10px] uppercase tracking-wider text-tertiary-text hover:underline"
                 >
                   {t('vouch.compose.shareOnX')}
                 </a>
@@ -275,7 +275,7 @@ export function VouchCompose() {
                   {showQr && (
                     <div id="vouch-claim-qr" className="mt-3 flex flex-col items-center gap-2">
                       <QrCode value={link} label={t('vouch.compose.qr.alt')} />
-                      <p className="max-w-xs text-center text-xs text-destructive">
+                      <p className="max-w-xs text-center text-xs text-destructive-text">
                         {t('vouch.compose.qr.warning')}
                       </p>
                     </div>
@@ -286,7 +286,7 @@ export function VouchCompose() {
           </>
         )}
 
-        {error && <p className="mt-2 text-sm text-destructive">{error}</p>}
+        {error && <p className="mt-2 text-sm text-destructive-text">{error}</p>}
       </div>
     </Frame>
   );
@@ -395,7 +395,7 @@ function BatchForm({
                   {t('vouch.compose.batch.cardLabel', { n: String(i + 1) })} — {c.note}
                 </p>
                 <div className="flex items-center gap-2">
-                  <code className="flex-1 truncate font-mono text-xs text-secondary">{c.link}</code>
+                  <code className="flex-1 truncate font-mono text-xs text-secondary-text">{c.link}</code>
                   <Button
                     variant="secondary"
                     size="icon"

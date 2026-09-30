@@ -33,6 +33,7 @@ const config: Config = {
         secondary: {
           DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
           foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)',
+          text: 'hsl(var(--secondary-text) / <alpha-value>)',
         },
         muted: {
           DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
@@ -41,22 +42,34 @@ const config: Config = {
         accent: {
           DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
           foreground: 'hsl(var(--accent-foreground) / <alpha-value>)',
+          text: 'hsl(var(--accent-text) / <alpha-value>)',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
           foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)',
+          text: 'hsl(var(--destructive-text) / <alpha-value>)',
         },
-        success: 'hsl(var(--success) / <alpha-value>)',
-        warning: 'hsl(var(--warning) / <alpha-value>)',
+        success: {
+          DEFAULT: 'hsl(var(--success) / <alpha-value>)',
+          text: 'hsl(var(--success-text) / <alpha-value>)',
+        },
+        warning: {
+          DEFAULT: 'hsl(var(--warning) / <alpha-value>)',
+          text: 'hsl(var(--warning-text) / <alpha-value>)',
+        },
         border: 'hsl(var(--border) / <alpha-value>)',
         input: 'hsl(var(--input) / <alpha-value>)',
         ring: 'hsl(var(--ring) / <alpha-value>)',
         starlight: 'hsl(var(--starlight) / <alpha-value>)',
         onchain: 'hsl(var(--onchain) / <alpha-value>)',
-        tertiary: 'hsl(var(--tertiary) / <alpha-value>)',
+        tertiary: {
+          DEFAULT: 'hsl(var(--tertiary) / <alpha-value>)',
+          text: 'hsl(var(--tertiary-text) / <alpha-value>)',
+        },
         lime: {
           DEFAULT: 'hsl(var(--lime) / <alpha-value>)',
           foreground: 'hsl(var(--lime-foreground) / <alpha-value>)',
+          text: 'hsl(var(--lime-text) / <alpha-value>)',
         },
         surface: {
           DEFAULT: 'hsl(var(--surface) / <alpha-value>)',

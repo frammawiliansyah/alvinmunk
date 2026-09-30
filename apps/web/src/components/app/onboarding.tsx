@@ -60,9 +60,9 @@ export function Onboarding() {
         />
         <p id="handle-status" aria-live="polite" className="h-4 text-xs">
           {avail === 'checking' && <span className="text-muted-foreground">{t('onboard.checking')}</span>}
-          {avail === 'free' && <span className="text-secondary">{t('onboard.handleFree', { handle: normalizeHandle(handle) })}</span>}
-          {avail === 'taken' && <span className="text-destructive">{t('onboard.handleTaken', { handle: normalizeHandle(handle) })}</span>}
-          {avail === 'reserved' && reservedUntil && <span className="text-destructive">{t('onboard.handleReserved', { handle: normalizeHandle(handle), date: reservedUntil })}</span>}
+          {avail === 'free' && <span className="text-secondary-text">{t('onboard.handleFree', { handle: normalizeHandle(handle) })}</span>}
+          {avail === 'taken' && <span className="text-destructive-text">{t('onboard.handleTaken', { handle: normalizeHandle(handle) })}</span>}
+          {avail === 'reserved' && reservedUntil && <span className="text-destructive-text">{t('onboard.handleReserved', { handle: normalizeHandle(handle), date: reservedUntil })}</span>}
         </p>
         <Button
           type="submit"

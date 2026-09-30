@@ -73,9 +73,9 @@ export function Unlockables({ address }: { address: string }) {
                 className={cn(
                   'grid size-9 shrink-0 place-items-center border',
                   unlocked
-                    ? 'border-secondary text-secondary'
+                    ? 'border-secondary text-secondary-text'
                     : passes
-                      ? 'border-tertiary text-tertiary'
+                      ? 'border-tertiary text-tertiary-text'
                       : 'border-border text-muted-foreground',
                 )}
               >
@@ -88,7 +88,7 @@ export function Unlockables({ address }: { address: string }) {
                 </p>
               </div>
               {unlocked ? (
-                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-secondary">
+                <span className="font-mono text-[10px] uppercase tracking-[0.15em] text-secondary-text">
                   {t('unlockables.unlocked')}
                 </span>
               ) : (
@@ -105,7 +105,7 @@ export function Unlockables({ address }: { address: string }) {
           );
         })}
       </ul>
-      {error && <p className="px-4 py-2 text-sm text-destructive">{error}</p>}
+      {error && <p className="px-4 py-2 text-sm text-destructive-text">{error}</p>}
     </Frame>
   );
 }

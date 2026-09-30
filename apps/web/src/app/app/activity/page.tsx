@@ -23,7 +23,7 @@ export default function ActivityPage() {
         className="group glass spotlight flex items-center justify-between gap-4 rounded-2xl p-5 transition-transform hover:-translate-y-0.5"
       >
         <div className="flex items-center gap-3">
-          <Trophy className="size-6 text-accent" />
+          <Trophy className="size-6 text-accent-text" />
           <div>
             <p className="font-semibold">{t('activity.page.leaderboard.title')}</p>
             <p className="text-sm text-muted-foreground">{t('activity.page.leaderboard.body')}</p>

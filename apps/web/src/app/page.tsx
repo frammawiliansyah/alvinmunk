@@ -261,7 +261,7 @@ export default function LandingPage() {
                 <p className="mt-3 text-muted-foreground">
                   {t('landing.dev.body')}
                 </p>
-                <Link href="/how-it-works#devs" className="mt-5 inline-flex font-mono text-sm text-tertiary hover:underline">
+                <Link href="/how-it-works#devs" className="mt-5 inline-flex font-mono text-sm text-tertiary-text hover:underline">
                   {t('landing.dev.link')}
                 </Link>
               </div>

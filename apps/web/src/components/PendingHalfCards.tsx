@@ -76,8 +76,8 @@ export function PendingHalfCards() {
               className={cn(
                 'grid size-10 shrink-0 place-items-center border border-dashed',
                 v.daysLeft <= 1
-                  ? 'border-destructive/60 text-destructive'
-                  : 'border-tertiary/50 text-tertiary',
+                  ? 'border-destructive/60 text-destructive-text'
+                  : 'border-tertiary/50 text-tertiary-text',
               )}
             >
               <span className="font-mono text-[10px]">
@@ -89,7 +89,7 @@ export function PendingHalfCards() {
               <p
                 className={cn(
                   'font-mono text-[10px] uppercase tracking-wider',
-                  v.daysLeft <= 1 ? 'text-destructive' : 'text-muted-foreground',
+                  v.daysLeft <= 1 ? 'text-destructive-text' : 'text-muted-foreground',
                 )}
               >
                 {v.daysLeft <= 1 ? t('pendingHalfCards.urgent') : t('pendingHalfCards.atRisk')}

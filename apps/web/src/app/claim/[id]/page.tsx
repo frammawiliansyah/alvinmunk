@@ -321,7 +321,7 @@ function ClaimInner({ params }: { params: { id: string } }) {
             </span>
             {error && (
               <>
-                <p className="max-w-xs text-sm text-destructive">{error}</p>
+                <p className="max-w-xs text-sm text-destructive-text">{error}</p>
                 <Link href="/app" className="font-mono text-xs text-muted-foreground underline">
                   open_the_app →
                 </Link>
@@ -406,9 +406,9 @@ function ClaimHandlePicker() {
       </div>
       <p id="claim-handle-status" aria-live="polite" className="h-4 text-xs">
         {avail === 'checking' && <span className="text-muted-foreground">{t('claim.handle.checking')}</span>}
-        {avail === 'free' && <span className="text-secondary">{t('claim.handle.free', { handle: normalizedHandle })}</span>}
-        {avail === 'taken' && <span className="text-destructive">{t('claim.handle.taken', { handle: normalizedHandle })}</span>}
-        {avail === 'reserved' && reservedUntil && <span className="text-destructive">{t('claim.handle.reserved', { handle: normalizedHandle, date: reservedUntil })}</span>}
+        {avail === 'free' && <span className="text-secondary-text">{t('claim.handle.free', { handle: normalizedHandle })}</span>}
+        {avail === 'taken' && <span className="text-destructive-text">{t('claim.handle.taken', { handle: normalizedHandle })}</span>}
+        {avail === 'reserved' && reservedUntil && <span className="text-destructive-text">{t('claim.handle.reserved', { handle: normalizedHandle, date: reservedUntil })}</span>}
       </p>
       <Button type="submit" variant="flow" size="lg" disabled={creating || avail === 'taken' || avail === 'reserved' || normalizedHandle.length < 3}>
         {creating ? t('claim.handle.submitting') : t('claim.handle.submit', { handle: normalizedHandle || 'handle' })}

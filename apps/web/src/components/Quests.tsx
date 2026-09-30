@@ -193,7 +193,7 @@ export function Quests({ address }: { address: string }) {
   const tag = (id: number) => {
     const text = repeats(id);
     return text ? (
-      <span className="ml-2 font-mono text-[10px] normal-case tracking-normal text-secondary">
+      <span className="ml-2 font-mono text-[10px] normal-case tracking-normal text-secondary-text">
         · {text}
       </span>
     ) : null;
@@ -263,7 +263,7 @@ export function Quests({ address }: { address: string }) {
                 />
               ))}
             </div>
-            <span className="flex items-center gap-1 font-mono text-[10px] text-secondary">
+            <span className="flex items-center gap-1 font-mono text-[10px] text-secondary-text">
               <Flame className="size-3.5" />
               {streak.weeks}
               {streak.best > streak.weeks && (
@@ -295,12 +295,12 @@ export function Quests({ address }: { address: string }) {
               {resolvingRef ? (
                 t('quests.lookingUp')
               ) : resolvedRef ? (
-                <span className="flex items-center text-secondary">
+                <span className="flex items-center text-secondary-text">
                   → <Avatar address={resolvedRef} size={16} ring={false} className="mx-1.5" />
                   {shortAddr(resolvedRef, 6, 6)}
                 </span>
               ) : (
-                <span className="text-destructive">{t('quests.noWallet')}</span>
+                <span className="text-destructive-text">{t('quests.noWallet')}</span>
               )}
             </div>
           )}
@@ -344,12 +344,12 @@ export function Quests({ address }: { address: string }) {
               {resolvingInvite ? (
                 t('quests.lookingUp')
               ) : resolvedInvite ? (
-                <span className="flex items-center text-secondary">
+                <span className="flex items-center text-secondary-text">
                   → <Avatar address={resolvedInvite} size={16} ring={false} className="mx-1.5" />
                   {shortAddr(resolvedInvite, 6, 6)}
                 </span>
               ) : (
-                <span className="text-destructive">{t('quests.noWallet')}</span>
+                <span className="text-destructive-text">{t('quests.noWallet')}</span>
               )}
             </div>
           )}
@@ -400,10 +400,10 @@ export function Quests({ address }: { address: string }) {
         {done && (
           <div className="mt-3 flex flex-col items-center">
             <StateArt kind="quest-complete" size={120} className="motion-safe:animate-ignite" />
-            <p className="mt-1 text-center text-xs text-secondary">{t('quests.done')}</p>
+            <p className="mt-1 text-center text-xs text-secondary-text">{t('quests.done')}</p>
           </div>
         )}
-        {error && <p className="mt-2 text-sm text-destructive">{error}</p>}
+        {error && <p className="mt-2 text-sm text-destructive-text">{error}</p>}
       </div>
     </Frame>
   );

@@ -114,7 +114,7 @@ export function VouchNetwork({
           label={isMe ? t('vouchNetwork.backed.me') : t('vouchNetwork.backed.them', { handle: `@${handle}` })}
           count={backedCount}
           people={backed}
-          accent="text-tertiary"
+          accent="text-tertiary-text"
           render={(p) => face(p.from, 32, caption(p))}
           line={(p) => line(p)}
         />
@@ -125,7 +125,7 @@ export function VouchNetwork({
             </p>
             <div className="mt-3 flex flex-wrap items-center gap-1.5">
               {mutual.map((a) => face(a, 26, name(a)))}
-              <span className="ml-1 font-mono text-xs text-secondary">{mutual.map(name).join(' · ')}</span>
+              <span className="ml-1 font-mono text-xs text-secondary-text">{mutual.map(name).join(' · ')}</span>
             </div>
           </div>
         )}

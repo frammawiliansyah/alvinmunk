@@ -45,7 +45,7 @@ export default function AppHome() {
       icon: Star,
       titleKey: 'appHome.shortcut.vouch.title',
       bodyKey: 'appHome.shortcut.vouch.body',
-      tint: 'text-accent',
+      tint: 'text-accent-text',
       cashable: false,
     },
     {
@@ -53,7 +53,7 @@ export default function AppHome() {
       icon: Target,
       titleKey: 'appHome.shortcut.quests.title',
       bodyKey: 'appHome.shortcut.quests.body',
-      tint: 'text-secondary',
+      tint: 'text-secondary-text',
       cashable: true,
     },
     {
@@ -61,7 +61,7 @@ export default function AppHome() {
       icon: Coins,
       titleKey: 'appHome.shortcut.rewards.title',
       bodyKey: 'appHome.shortcut.rewards.body',
-      tint: 'text-tertiary',
+      tint: 'text-tertiary-text',
       cashable: true,
     },
   ];

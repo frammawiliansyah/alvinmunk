@@ -22,17 +22,22 @@
 
   --secondary: 157 84% 52%; /* mint green — earned / verified energy */
   --secondary-foreground: 265 60% 6%;
+  --secondary-text: 157 84% 52%; /* text-safe variant — clears AA on background/card/surface */
 
   --muted: 265 20% 14%;
   --muted-foreground: 252 14% 67%;
 
   --accent: 36 100% 64%; /* warm gold — the human/vouch warmth, used sparingly */
   --accent-foreground: 265 60% 6%;
+  --accent-text: 36 100% 64%;
 
   --destructive: 350 82% 62%;
   --destructive-foreground: 265 60% 6%;
+  --destructive-text: 350 82% 62%;
   --success: 157 84% 52%;
+  --success-text: 157 84% 52%;
   --warning: 38 95% 62%;
+  --warning-text: 38 95% 62%;
 
   --border: 265 26% 16%;
   --input: 265 26% 16%;
@@ -44,6 +49,7 @@
 
   /* the signature flow + depth surfaces */
   --tertiary: 193 100% 52%; /* cyan — social / connection */
+  --tertiary-text: 193 100% 52%;
   /* violet stop of .flow, kept light enough for the dark flow-button label to clear AA */
   --flow-violet: 265 100% 66%;
   --surface: 266 34% 9%;
@@ -54,6 +60,7 @@
      Used on warm/social surfaces only; never on money/proof UI (see asset-art-direction). */
   --lime: 79 94% 64%;
   --lime-foreground: 265 60% 6%;
+  --lime-text: 79 94% 64%;
 
   /* Decorative colours that used to be hard-coded, as tokens so the light theme can override them. */
   --nebula-a: 255 60% 16%;
@@ -76,14 +83,21 @@
   --primary-foreground: 0 0% 100%;
   --secondary: 157 84% 45%;
   --secondary-foreground: 265 60% 8%;
+  /* text-safe variant — the fill colour above measures 1.74:1 on the light background;
+     darkened to clear 4.5:1 on background, card, surface, surface-2 and muted. */
+  --secondary-text: 157 84% 24%;
   --muted: 265 20% 94%;
   --muted-foreground: 252 14% 40%;
   --accent: 36 100% 55%;
   --accent-foreground: 265 60% 8%;
+  --accent-text: 36 100% 28%;
   --destructive: 350 82% 55%;
   --destructive-foreground: 265 60% 8%;
+  --destructive-text: 350 82% 44%;
   --success: 157 84% 45%;
+  --success-text: 157 84% 24%;
   --warning: 38 95% 55%;
+  --warning-text: 38 95% 28%;
   --border: 265 26% 85%;
   --input: 265 26% 85%;
   --ring: 265 100% 60%;
@@ -91,12 +105,14 @@
   --onchain: 265 100% 60%;
   --radius: 0.875rem;
   --tertiary: 193 100% 45%;
+  --tertiary-text: 193 100% 27%;
   --flow-violet: 265 100% 68%;
   --surface: 266 34% 97%;
   --surface-2: 266 30% 93%;
   --hairline: 260 60% 15%;
   --lime: 79 94% 45%;
   --lime-foreground: 265 60% 8%;
+  --lime-text: 79 94% 22%;
   --nebula-a: 255 60% 80%;
   --nebula-b: 24 70% 82%;
   --aurora-base: 228 40% 96%;

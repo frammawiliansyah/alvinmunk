@@ -94,7 +94,7 @@ export function OwedBonuses() {
       />
 
       <div className="flex items-start gap-3 p-4 pb-2">
-        <Sparkles className="mt-0.5 size-4 shrink-0 text-secondary" />
+        <Sparkles className="mt-0.5 size-4 shrink-0 text-secondary-text" />
         <div>
           <p className="font-display text-lg text-foreground">
             {t('owedBonuses.title', { total: String(total) })}
@@ -108,7 +108,7 @@ export function OwedBonuses() {
           const name = nameOf(row);
           return (
             <li key={row.claimer} className="flex items-center gap-3 p-4">
-              <div className="grid size-10 shrink-0 place-items-center border border-dashed border-secondary/50 text-secondary">
+              <div className="grid size-10 shrink-0 place-items-center border border-dashed border-secondary/50 text-secondary-text">
                 <span className="font-mono text-[10px]">+{row.amount}</span>
               </div>
               <div className="min-w-0 flex-1">
