@@ -267,7 +267,8 @@ describe('Quests', () => {
 
   describe('repeatable quests (#154)', () => {
     const WEEK = 604_800;
-    const labels = () => [...container.querySelectorAll('label, span.font-mono')].map((l) => l.textContent);
+    const labels = () =>
+      [...container.querySelectorAll('label, span.font-mono, span.eyebrow-mono')].map((l) => l.textContent);
 
     it('tags a repeatable quest and shows it done only for this period', async () => {
       getQuestPeriodsMock.mockResolvedValue(

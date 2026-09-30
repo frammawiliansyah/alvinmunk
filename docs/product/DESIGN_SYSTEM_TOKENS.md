@@ -157,9 +157,22 @@ the dark label (4.73:1); the light theme's 60% violet keeps white (5.30:1). `flo
 | `small` | 0.875rem / 1.5 | secondary |
 | `caption` | 0.75rem / 1.4, muted | meta, timestamps |
 | `mono` | 0.875rem / 1.5, mono | addresses, hashes |
+| `text-2xs` | 0.6875rem / 1rem (Tailwind `fontSize`) | the floor — nothing renders smaller |
 
-Load with `next/font` (variable, `display: "swap"`, subset latin). Headings get
-`font-feature-settings` defaults; mono for any `G…`/hash with middle-truncation.
+No arbitrary `text-[Npx]` below `text-2xs` (11px): it's the bottom of the scale, so the
+smallest label size is never a one-off. Uppercase kickers (the small label above a
+heading) use the `.eyebrow` / `.eyebrow-mono` utilities (`globals.css`, `@layer
+components`) — `text-2xs`, `0.22em` tracking, uppercase, `--muted-foreground` by default;
+`eyebrow-mono` swaps in the mono face for on-chain/terminal-style labels. Both live in
+`components` (not `utilities`) so a color utility alongside them in `className` (e.g.
+`eyebrow-mono text-primary/80`) overrides the default color. Don't hand-roll a
+`tracking-[Nem]` kicker — that's exactly the five-way drift (`0.15`/`0.18`/`0.2`/`0.25`/`0.28em`)
+these utilities replace.
+
+Load with `next/font` (variable, `display: "swap"`, subsets `latin` + `latin-ext`) —
+`latin-ext` carries Turkish `ğ`, `ş`, `İ`, and listing it gets it preloaded instead of
+loaded only as a fallback-font swap. Headings get `font-feature-settings` defaults; mono
+for any `G…`/hash with middle-truncation.
 
 ## 3. Spacing, radius, layout
 

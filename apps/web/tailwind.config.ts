@@ -15,6 +15,9 @@ const config: Config = {
       screens: { '2xl': '1152px' },
     },
     extend: {
+      fontSize: {
+        '2xs': ['0.6875rem', { lineHeight: '1rem' }],
+      },
       colors: {
         background: 'hsl(var(--background) / <alpha-value>)',
         foreground: 'hsl(var(--foreground) / <alpha-value>)',
