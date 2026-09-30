@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { THEME_COLOR_DARK } from '@/lib/theme-colors';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -8,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: '/app',
     scope: '/',
     display: 'standalone',
-    background_color: '#0B0512',
-    theme_color: '#9A52FF',
+    background_color: THEME_COLOR_DARK,
+    theme_color: THEME_COLOR_DARK,
     icons: [
       {
         src: '/assets/brand/alvinmunk-icon-192.png',
